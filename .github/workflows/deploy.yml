@@ -13,21 +13,21 @@ permissions:
   contents: read
 
 jobs:
-  build:
-    uses: ./.github/workflows/gradle.yml
+  # build:
+    # uses: ./.github/workflows/gradle.yml
   deploy:
-    needs: build
+    # needs: build
     strategy:
       matrix:
         include:
-          - target: publishIosArm64PublicationToSonatypeRepository
-            os: macos-latest
-          - target: publishAndroidDebugPublicationToSonatypeRepository
-            os: ubuntu-latest
-          - target: publishAndroidReleasePublicationToSonatypeRepository
-            os: ubuntu-latest
-          - target: publishJvmPublicationToSonatypeRepository
-            os: ubuntu-latest
+          # - target: publishIosArm64PublicationToSonatypeRepository
+          #   os: macos-latest
+          # - target: publishAndroidDebugPublicationToSonatypeRepository
+          #   os: ubuntu-latest
+          # - target: publishAndroidReleasePublicationToSonatypeRepository
+          #   os: ubuntu-latest
+          # - target: publishJvmPublicationToSonatypeRepository
+          #   os: ubuntu-latest
           - target: publishLinuxX64PublicationToSonatypeRepository
             os: ubuntu-latest
     runs-on: ${{ matrix.os }}
